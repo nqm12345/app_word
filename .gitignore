@@ -1,0 +1,15 @@
+# Build outputs
+bin/
+obj/
+dist/
+
+# Node
+node_modules/
+
+# IDE
+.vs/
+*.user
+
+# Temp
+*.log
+*.tmp

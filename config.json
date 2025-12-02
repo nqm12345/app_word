@@ -1,0 +1,5 @@
+{
+  "port": 1901,
+  "companyApiUrl": "http://localhost:3156",
+  "apiEndpoint": "/api/files/download"
+}
