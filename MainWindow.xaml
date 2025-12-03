@@ -100,39 +100,39 @@
                     
                     <!-- Menu Items -->
                     <StackPanel Grid.Row="1" VerticalAlignment="Top">
-                        <TextBlock Text="CTRL" Foreground="#444" FontSize="9" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <TextBlock Text="ĐIỀU KHIỂN" Foreground="#888" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                         
                         <Button x:Name="btnStartStop" Click="BtnStartStop_Click" Width="36" Height="36" Margin="0,5"
-                                Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Pause/Resume">
-                            <TextBlock x:Name="txtBtnIcon" Text="⏸" FontSize="16" Foreground="#888"/>
+                                Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Tạm dừng / Tiếp tục">
+                            <TextBlock x:Name="txtBtnIcon" Text="⏸" FontSize="18" Foreground="#ddd"/>
                         </Button>
                         
                         <Button x:Name="btnRestart" Click="BtnRestart_Click" Width="36" Height="36" Margin="0,5"
-                                Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Restart Server">
-                            <TextBlock Text="↻" FontSize="18" Foreground="#888"/>
+                                Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Khởi động lại">
+                            <TextBlock Text="↻" FontSize="20" Foreground="#ddd"/>
                         </Button>
                         
                         <Button Click="BtnMinimize_Click" Width="36" Height="36" Margin="0,5"
-                                Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Minimize">
-                            <TextBlock Text="▬" FontSize="12" Foreground="#888"/>
+                                Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Thu nhỏ">
+                            <TextBlock Text="▬" FontSize="14" Foreground="#ddd"/>
                         </Button>
                         
-                        <TextBlock Text="INFO" Foreground="#444" FontSize="9" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+                        <TextBlock Text="THÔNG TIN" Foreground="#888" FontSize="10" HorizontalAlignment="Center" Margin="0,20,0,10"/>
                         
                         <!-- Uptime indicator -->
-                        <Border Background="#1a1a1a" CornerRadius="8" Width="40" Height="40" Margin="0,5" ToolTip="Uptime">
+                        <Border Background="#1a1a1a" CornerRadius="8" Width="40" Height="40" Margin="0,5" ToolTip="Thời gian hoạt động">
                             <TextBlock Text="⏱" FontSize="16" Foreground="#60a5fa" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         
                         <!-- Request counter -->
-                        <Border Background="#1a1a1a" CornerRadius="8" Width="40" Height="40" Margin="0,5" ToolTip="Total Requests">
+                        <Border Background="#1a1a1a" CornerRadius="8" Width="40" Height="40" Margin="0,5" ToolTip="Tổng số yêu cầu">
                             <TextBlock Text="📊" FontSize="16" Foreground="#22c55e" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </StackPanel>
                     
                     <!-- Exit button -->
                     <Button Grid.Row="2" Click="BtnExit_Click" Width="36" Height="36" Margin="0,0,0,20"
-                            Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" ToolTip="Exit">
+                            Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" ToolTip="Thoát">
                         <Grid Width="18" Height="18">
                             <Ellipse Stroke="#ef4444" StrokeThickness="2" Width="14" Height="14"/>
                             <Rectangle Fill="#ef4444" Width="2" Height="8" VerticalAlignment="Top" Margin="0,1,0,0"/>
@@ -163,13 +163,13 @@
                     <!-- Window Controls -->
                     <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
                         <Button Click="BtnMinimize_Click" Width="30" Height="30" Background="Transparent" BorderThickness="0" Cursor="Hand">
-                            <TextBlock Text="─" Foreground="#666" FontSize="12"/>
+                            <TextBlock Text="─" Foreground="#ccc" FontSize="14"/>
                         </Button>
                         <Button Width="30" Height="30" Background="Transparent" BorderThickness="0" Cursor="Hand">
-                            <TextBlock Text="□" Foreground="#666" FontSize="12"/>
+                            <TextBlock Text="□" Foreground="#ccc" FontSize="14"/>
                         </Button>
                         <Button Click="BtnExit_Click" Width="30" Height="30" Background="Transparent" BorderThickness="0" Cursor="Hand">
-                            <TextBlock Text="✕" Foreground="#666" FontSize="12"/>
+                            <TextBlock Text="✕" Foreground="#ccc" FontSize="14"/>
                         </Button>
                     </StackPanel>
                 </Grid>
@@ -193,28 +193,28 @@
                         
                         <Border Grid.Column="0" Background="#141414" CornerRadius="8" Padding="15" Margin="0,0,6,0">
                             <StackPanel>
-                                <TextBlock Text="PORT" Foreground="#555" FontSize="10" FontWeight="Bold"/>
+                                <TextBlock Text="CỔNG" Foreground="#999" FontSize="11" FontWeight="Bold"/>
                                 <TextBlock x:Name="txtPort" Text="1901" Foreground="White" FontSize="24" FontWeight="Bold" Margin="0,5,0,0"/>
                             </StackPanel>
                         </Border>
                         
                         <Border Grid.Column="1" Background="#141414" CornerRadius="8" Padding="15" Margin="6,0">
                             <StackPanel>
-                                <TextBlock Text="STATUS" Foreground="#555" FontSize="10" FontWeight="Bold"/>
+                                <TextBlock Text="TRẠNG THÁI" Foreground="#999" FontSize="11" FontWeight="Bold"/>
                                 <TextBlock x:Name="txtStatusCard" Text="RUNNING" Foreground="#22c55e" FontSize="18" FontWeight="Bold" Margin="0,5,0,0"/>
                             </StackPanel>
                         </Border>
                         
                         <Border Grid.Column="2" Background="#141414" CornerRadius="8" Padding="15" Margin="6,0">
                             <StackPanel>
-                                <TextBlock Text="REQUESTS" Foreground="#555" FontSize="10" FontWeight="Bold"/>
+                                <TextBlock Text="YÊU CẦU" Foreground="#999" FontSize="11" FontWeight="Bold"/>
                                 <TextBlock x:Name="txtRequests" Text="0" Foreground="White" FontSize="24" FontWeight="Bold" Margin="0,5,0,0"/>
                             </StackPanel>
                         </Border>
                         
                         <Border Grid.Column="3" Background="#141414" CornerRadius="8" Padding="15" Margin="6,0,0,0">
                             <StackPanel>
-                                <TextBlock Text="UPTIME" Foreground="#555" FontSize="10" FontWeight="Bold"/>
+                                <TextBlock Text="THỜI GIAN" Foreground="#999" FontSize="11" FontWeight="Bold"/>
                                 <TextBlock x:Name="txtUptime" Text="00:00:00" Foreground="#60a5fa" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,0" FontFamily="Consolas"/>
                             </StackPanel>
                         </Border>
@@ -231,15 +231,15 @@
                             <Border Grid.Row="0" BorderBrush="#1a1a1a" BorderThickness="0,0,0,1" Padding="15,12">
                                 <Grid>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="CONSOLE OUTPUT" Foreground="#555" FontSize="10" FontWeight="Bold"/>
+                                        <TextBlock Text="NHẬT KÝ HỆ THỐNG" Foreground="#999" FontSize="11" FontWeight="Bold"/>
                                         <TextBlock Text="  •  " Foreground="#333"/>
                                         <TextBlock x:Name="txtApi" Text="localhost:3156" Foreground="#60a5fa" FontSize="10" FontFamily="Consolas"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <Button Click="BtnCopyApi_Click" Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="8,2" ToolTip="Copy API URL">
+                                        <Button Click="BtnCopyApi_Click" Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="8,2" ToolTip="Sao chép URL">
                                             <TextBlock Text="📋" FontSize="12"/>
                                         </Button>
-                                        <Button Click="BtnClearLog_Click" Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="8,2" ToolTip="Clear Log">
+                                        <Button Click="BtnClearLog_Click" Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="8,2" ToolTip="Xóa nhật ký">
                                             <TextBlock Text="🗑" FontSize="12"/>
                                         </Button>
                                     </StackPanel>
@@ -247,8 +247,8 @@
                             </Border>
                             
                             <ScrollViewer x:Name="logScroller" Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                                <TextBox x:Name="txtLog" Foreground="#888" Background="Transparent" BorderThickness="0"
-                                         FontFamily="Consolas" FontSize="12" Padding="15" TextWrapping="Wrap"
+                                <TextBox x:Name="txtLog" Foreground="#ccc" Background="Transparent" BorderThickness="0"
+                                         FontFamily="Consolas" FontSize="13" Padding="15" TextWrapping="Wrap"
                                          IsReadOnly="True" AcceptsReturn="True"/>
                             </ScrollViewer>
                         </Grid>
@@ -261,10 +261,10 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         
-                        <TextBlock Grid.Column="0" Text="v1.0.0  •  © 2024 LifeTex" Foreground="#333" FontSize="10" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="0" Text="v1.0.0  •  © 2025 Công ty LifeTex" Foreground="#aaa" FontSize="12" VerticalAlignment="Center"/>
                         
                         <CheckBox x:Name="chkAutoStart" Grid.Column="1" Content=" Khởi động cùng Windows" 
-                                  Foreground="#555" FontSize="11" VerticalAlignment="Center"
+                                  Foreground="#bbb" FontSize="12" VerticalAlignment="Center"
                                   Checked="ChkAutoStart_Changed" Unchecked="ChkAutoStart_Changed"/>
                     </Grid>
                 </Grid>
