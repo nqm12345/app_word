@@ -24,6 +24,35 @@ namespace WordWebDAV
         public event Action<string>? OnLog;
         public bool IsRunning => _isRunning;
 
+        private string GetMimeType(string filename)
+        {
+            var ext = Path.GetExtension(filename).ToLowerInvariant();
+            return ext switch
+            {
+                // Word
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".doc" => "application/msword",
+                ".docm" => "application/vnd.ms-word.document.macroEnabled.12",
+                ".rtf" => "application/rtf",
+                // Excel
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".xls" => "application/vnd.ms-excel",
+                ".xlsm" => "application/vnd.ms-excel.sheet.macroEnabled.12",
+                ".csv" => "text/csv",
+                // PowerPoint
+                ".pptx" => "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                ".ppt" => "application/vnd.ms-powerpoint",
+                ".pptm" => "application/vnd.ms-powerpoint.presentation.macroEnabled.12",
+                // Visio
+                ".vsdx" => "application/vnd.ms-visio.drawing",
+                ".vsd" => "application/vnd.visio",
+                // Project
+                ".mpp" => "application/vnd.ms-project",
+                // Default
+                _ => "application/octet-stream"
+            };
+        }
+
         public WebDAVServer(AppConfig config)
         {
             _config = config;
@@ -223,7 +252,7 @@ namespace WordWebDAV
             var content = await apiResponse.Content.ReadAsByteArrayAsync();
             Log($"   ✅ GET THÀNH CÔNG: {content.Length} bytes - File đã tải về Word");
 
-            response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            response.ContentType = GetMimeType(filename);
             response.AddHeader("Content-Disposition", $"inline; filename=\"{filename}\"");
             response.ContentLength64 = content.Length;
             await response.OutputStream.WriteAsync(content);
@@ -244,8 +273,7 @@ namespace WordWebDAV
             // Send as multipart/form-data (Company API expects this)
             using var formContent = new MultipartFormDataContent();
             var fileContent = new ByteArrayContent(fileBytes);
-            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(GetMimeType(filename));
             formContent.Add(fileContent, "file", filename);
 
             var apiResponse = await _httpClient.PutAsync(apiUrl, formContent);
@@ -282,7 +310,7 @@ namespace WordWebDAV
             var apiResponse = await _httpClient.SendAsync(request);
             
             response.StatusCode = (int)apiResponse.StatusCode;
-            response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            response.ContentType = GetMimeType(filename);
         }
 
         private void HandleOptions(HttpListenerResponse response)
