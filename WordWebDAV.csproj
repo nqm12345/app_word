@@ -20,9 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="banner_app.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="app.ico" />
   </ItemGroup>
 
   <ItemGroup>

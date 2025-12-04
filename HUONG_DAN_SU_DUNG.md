@@ -1,85 +1,107 @@
-# 📘 HƯỚNG DẪN CÀI ĐẶT VÀ SỬ DỤNG
-## Ứng dụng Chỉnh sửa Office (ChinhSuaWord)
+# 📘 HƯỚNG DẪN SỬ DỤNG ỨNG DỤNG CHỈNH SỬA OFFICE
 
-<!-- [CHÈN ẢNH: Logo công ty hoặc banner ứng dụng] -->
+**Phiên bản:** 1.0.0  
+**Công ty:** LifeTex
 
 ---
 
-## 📋 Giới thiệu
+## � YÊU CẦU HỆ THỐNG
 
-**ChinhSuaWord** là ứng dụng cho phép chỉnh sửa file Office (Word, Excel, PowerPoint, Visio) **trực tiếp từ hệ thống web** mà không cần tải về máy rồi upload lại.
+### Windows:
+| Phiên bản | Hỗ trợ |
+|-----------|--------|
+| Windows 11 | ✅ Có |
+| Windows 10 | ✅ Có |
 
-### Cách hoạt động:
+### Microsoft Office:
+| Phiên bản | Hỗ trợ |
+|-----------|--------|
+| Microsoft 365 | ✅ Có |
+| Office 2021 | ✅ Có |
+| Office 2019 | ✅ Có |
+| Office 2016 | ✅ Có |
+| Office 2013 | ✅ Có |
+
+> ⚠️ **Lưu ý:** Office 2010 trở xuống và Windows 7 không được hỗ trợ.
+
+---
+
+## �📦 BƯỚC 1: GIẢI NÉN FILE
+
+### 1.1. Nhận file từ quản trị viên
+
+Bạn sẽ nhận được file: **`ChinhSuaOffice.rar`** (khoảng 49 MB)
+
+<!-- 
+📸 ẢNH 1: Screenshot file ChinhSuaOffice.rar trong Windows Explorer
+- Hiện file RAR với icon WinRAR
+- Hiện kích thước file ~49 MB
+-->
+
+### 1.2. Giải nén file
+
+1. **Click chuột phải** vào file `ChinhSuaOffice.rar`
+2. Chọn **"Extract Here"** hoặc **"Giải nén tại đây"**
+
+<!-- 
+📸 ẢNH 2: Screenshot menu chuột phải khi click vào file RAR
+- Highlight dòng "Extract Here" hoặc "Extract to ChinhSuaOffice\"
+- Dùng mũi tên hoặc khoanh đỏ để chỉ rõ
+-->
+
+### 1.3. Kết quả sau khi giải nén
+
+Sau khi giải nén xong, bạn sẽ thấy **folder mới** tên `ChinhSuaOffice`:
 
 ```
-┌─────────────┐      ┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│   Website   │ ──▶  │  App chạy   │ ──▶  │   Office    │ ──▶  │   Server    │
-│  Click Edit │      │  trên máy   │      │  Word/Excel │      │  Lưu file   │
-└─────────────┘      └─────────────┘      └─────────────┘      └─────────────┘
+📂 ChinhSuaOffice/
+├── ChinhSuaOffice.exe    (155 MB - File chạy chính)
+├── config.json           (0.1 KB - File cấu hình)
+└── HUONG_DAN_SU_DUNG.md  (File hướng dẫn này)
 ```
 
-<!-- [CHÈN ẢNH: Sơ đồ luồng hoạt động - Web → App → Office → Lưu] -->
+<!-- 
+📸 ẢNH 3: Screenshot folder ChinhSuaOffice đã giải nén
+- Hiện 3 file bên trong: ChinhSuaOffice.exe, config.json, HUONG_DAN_SU_DUNG.md
+- Hiện cột Size để thấy kích thước từng file
+-->
 
-### Tính năng:
-- ✅ Mở và chỉnh sửa file Word (.doc, .docx)
-- ✅ Mở và chỉnh sửa file Excel (.xls, .xlsx)
-- ✅ Mở và chỉnh sửa file PowerPoint (.ppt, .pptx)
-- ✅ Mở và chỉnh sửa file Visio (.vsd, .vsdx)
-- ✅ Tự động cấu hình Registry tắt Protected View
-- ✅ Tự động thêm server vào Trusted Locations
-- ✅ Lưu file trực tiếp lên server (Ctrl+S)
+### 1.4. Nên đặt folder ở đâu?
 
----
-
-## 📦 Yêu cầu hệ thống
-
-| Yêu cầu | Chi tiết |
-|---------|----------|
-| **Hệ điều hành** | Windows 10 / Windows 11 |
-| **Microsoft Office** | 2013, 2016, 2019, 2021 hoặc Microsoft 365 |
-| **Kết nối mạng** | Có kết nối Internet để truy cập server |
-| **Quyền** | Không cần quyền Admin |
+Bạn có thể để folder ở:
+- **Desktop** (Màn hình nền) - Dễ tìm
+- **C:\ChinhSuaOffice** - Gọn gàng
+- **D:\ChinhSuaOffice** - Nếu ổ C ít dung lượng
 
 ---
 
-## 📁 Danh sách file cài đặt
+## 📄 BƯỚC 2: HIỂU CÁC FILE TRONG FOLDER
 
-Sau khi giải nén, bạn sẽ thấy các file sau:
+### 2.1. File `ChinhSuaOffice.exe` - File chạy chính
 
-| File | Mô tả | Bắt buộc |
-|------|-------|----------|
-| `ChinhSuaWord.exe` | Ứng dụng chính (159 MB) | ✅ Có |
-| `config.json` | File cấu hình server | ✅ Có |
-| `app.ico` | Icon ứng dụng | ❌ Không |
-| `HUONG_DAN_SU_DUNG.md` | Hướng dẫn này | ❌ Không |
+| Thông tin | Chi tiết |
+|-----------|----------|
+| **Tên file** | ChinhSuaOffice.exe |
+| **Kích thước** | ~155 MB |
+| **Công dụng** | Ứng dụng chính để chỉnh sửa file Office từ web |
+| **Cách dùng** | Double-click để chạy |
 
-<!-- [CHÈN ẢNH: Screenshot folder chứa các file trong Windows Explorer] -->
+<!-- 
+📸 ẢNH 4: Screenshot file ChinhSuaOffice.exe được highlight
+- Khoanh đỏ hoặc mũi tên chỉ vào file exe
+- Hiện tooltip hoặc Properties nếu cần
+-->
 
----
+### 2.2. File `config.json` - File cấu hình
 
-## 🚀 HƯỚNG DẪN CÀI ĐẶT CHI TIẾT
+| Thông tin | Chi tiết |
+|-----------|----------|
+| **Tên file** | config.json |
+| **Kích thước** | ~0.1 KB |
+| **Công dụng** | Chứa cấu hình kết nối đến server công ty |
+| **Có cần sửa?** | ❌ Không - Đã cấu hình sẵn |
 
-### Bước 1: Giải nén file
-
-1. Nhận file `ChinhSuaOffice.zip` hoặc `ChinhSuaOffice.rar` từ quản trị viên
-2. Click chuột phải vào file → Chọn **"Extract Here"** hoặc **"Giải nén tại đây"**
-3. Một folder mới sẽ được tạo chứa các file ứng dụng
-
-**Gợi ý vị trí lưu:**
-- `C:\ChinhSuaOffice\`
-- `D:\ChinhSuaOffice\`
-- Desktop (để dễ truy cập)
-
-<!-- [CHÈN ẢNH: Screenshot click chuột phải → Extract Here] -->
-
----
-
-### Bước 2: Kiểm tra cấu hình (Quan trọng!)
-
-1. Mở folder vừa giải nén
-2. Tìm file `config.json`
-3. Click chuột phải → **Open with** → **Notepad**
-4. Kiểm tra nội dung:
+**Nội dung bên trong file config.json:**
 
 ```json
 {
@@ -89,360 +111,291 @@ Sau khi giải nén, bạn sẽ thấy các file sau:
 }
 ```
 
-**Giải thích các thông số:**
+<!-- 
+📸 ẢNH 5: Screenshot file config.json mở bằng Notepad
+- Hiện nội dung JSON với 3 dòng cấu hình
+- Có thể thêm chú thích bên cạnh giải thích từng dòng
+-->
 
-| Thông số | Ý nghĩa | Có cần sửa? |
-|----------|---------|-------------|
-| `port` | Cổng ứng dụng chạy | ❌ Không (giữ 1901) |
-| `companyApiUrl` | Địa chỉ server công ty | ⚠️ Kiểm tra đúng chưa |
-| `apiEndpoint` | Đường dẫn API | ❌ Không |
+**Giải thích từng dòng:**
 
-> ⚠️ **Lưu ý:** Nếu `companyApiUrl` sai, ứng dụng sẽ không hoạt động. Liên hệ quản trị viên để lấy URL đúng.
+| Tham số | Giá trị | Ý nghĩa |
+|---------|---------|---------|
+| `port` | 1901 | Cổng mà ứng dụng sử dụng trên máy bạn |
+| `companyApiUrl` | https://administrator.lifetex.vn:316 | Địa chỉ server công ty |
+| `apiEndpoint` | /api/files/download | Đường dẫn API để tải file |
 
-<!-- [CHÈN ẢNH: Screenshot file config.json mở trong Notepad với các thông số] -->
-
----
-
-### Bước 3: Chạy ứng dụng lần đầu
-
-1. Quay lại folder chứa file
-2. **Double-click** vào file `ChinhSuaWord.exe`
-3. Nếu Windows hỏi **"Windows protected your PC"**:
-   - Click **"More info"**
-   - Click **"Run anyway"**
-
-<!-- [CHÈN ẢNH: Screenshot Windows SmartScreen với nút "Run anyway"] -->
-
-**Khi khởi động lần đầu, ứng dụng sẽ TỰ ĐỘNG:**
-
-| Bước | Mô tả | Thời gian |
-|------|-------|-----------|
-| 1 | Cấu hình Registry tắt Protected View | 1-2 giây |
-| 2 | Thêm server vào Trusted Locations | 1-2 giây |
-| 3 | Tạo shortcut trên Desktop | 1 giây |
-| 4 | Khởi động WebDAV server | 1-2 giây |
+> ⚠️ **Lưu ý:** KHÔNG chỉnh sửa file này trừ khi được hướng dẫn bởi quản trị viên.
 
 ---
 
-### Bước 4: Xác nhận ứng dụng đã sẵn sàng
+## 🚀 BƯỚC 3: CHẠY ỨNG DỤNG
 
-Khi thấy giao diện như sau, ứng dụng đã sẵn sàng:
+### 3.1. Cách chạy
+
+1. Mở folder **ChinhSuaOffice**
+2. **Double-click** vào file **`ChinhSuaOffice.exe`**
+
+<!-- 
+📸 ẢNH 6: Screenshot double-click vào file exe
+- Mũi tên chỉ vào file ChinhSuaOffice.exe
+- Có thể thêm icon chuột đang click
+-->
+
+### 3.2. Lần đầu chạy - Windows SmartScreen
+
+Nếu Windows hiện thông báo **"Windows protected your PC"**:
+
+<!-- 
+📸 ẢNH 7: Screenshot màn hình Windows SmartScreen
+- Hiện đầy đủ popup "Windows protected your PC"
+- Khoanh đỏ nút "More info"
+-->
+
+**Cách xử lý:**
+
+**Bước 1:** Click **"More info"** (Thông tin thêm)
+
+<!-- 
+📸 ẢNH 8: Screenshot sau khi click "More info"
+- Hiện nút "Run anyway" đã xuất hiện
+- Khoanh đỏ nút "Run anyway"
+-->
+
+**Bước 2:** Click **"Run anyway"** (Vẫn chạy)
+
+### 3.3. Sau khi chạy - App ở đâu?
+
+> ⚠️ **QUAN TRỌNG:** Sau khi chạy, ứng dụng sẽ **KHÔNG hiện cửa sổ**!
+
+Ứng dụng chạy **NGẦM** và chỉ hiện **ICON** ở **khay hệ thống** (System Tray).
+
+**Vị trí khay hệ thống:**
+
+<!-- 
+📸 ẢNH 9: Screenshot toàn màn hình với mũi tên chỉ vào khay hệ thống
+- Khoanh đỏ vùng khay hệ thống (góc phải taskbar, gần đồng hồ)
+- Mũi tên lớn chỉ vào vị trí đó
+- Ghi chú: "Khay hệ thống (System Tray)"
+-->
+
+**Vị trí cụ thể trên taskbar:**
 
 ```
-┌────────────────────────────────────────────────┐
-│  Trình chỉnh sửa Word  •  Đang chạy           │
-├────────────────────────────────────────────────┤
-│  PORT          STATUS          API             │
-│  1901          RUNNING         https://...     │
-│                (màu xanh)                      │
-├────────────────────────────────────────────────┤
-│  CONSOLE OUTPUT                                │
-│  ✅ Đã cấu hình Registry cho 4 ứng dụng Office │
-│  ✅ Đã sẵn sàng trên cổng 1901                 │
-│  🌐 API: https://administrator.lifetex.vn:316 │
-└────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│ [Start] [...............................] [^] [🔊] [📅 14:00] │
+└──────────────────────────────────────────────────────────────┘
+                                             ↑
+                                             │
+                              Khay hệ thống nằm ở đây
 ```
 
-<!-- [CHÈN ẢNH: Screenshot giao diện app đang chạy với STATUS = RUNNING màu xanh] -->
+### 3.4. Tìm icon ứng dụng
 
-**Kiểm tra thành công:**
-- ✅ Status hiển thị **RUNNING** (màu xanh)
-- ✅ Log hiển thị **"Đã sẵn sàng trên cổng 1901"**
-- ✅ Không có lỗi màu đỏ
+**Cách 1:** Nhìn trực tiếp ở khay hệ thống (có thể thấy ngay icon app)
 
----
+**Cách 2:** Nếu không thấy, click vào **mũi tên `^`** để xem icon ẩn:
 
-### Bước 5: Giữ ứng dụng chạy nền
+<!-- 
+📸 ẢNH 10: Screenshot click vào mũi tên ^ để mở khay icon ẩn
+- Khoanh đỏ mũi tên ^
+- Mũi tên chỉ hướng click
+-->
 
-> ⚠️ **QUAN TRỌNG:** Ứng dụng phải **LUÔN CHẠY** khi bạn muốn chỉnh sửa file từ web!
+<!-- 
+📸 ẢNH 11: Screenshot popup hiện các icon ẩn
+- Khoanh đỏ icon của ứng dụng ChinhSuaOffice
+- Ghi chú: "Icon ứng dụng"
+-->
 
-**Cách để ứng dụng chạy nền:**
+### 3.5. Xác nhận app đang chạy
 
-1. **Thu nhỏ** (click nút `-`) → App thu xuống taskbar
-2. **KHÔNG đóng** (không click nút `X`)
-3. Để app chạy suốt ngày làm việc
+**Di chuột (hover)** lên icon ứng dụng, sẽ hiện tooltip:
 
-**Mẹo:** Sau khi cài đặt, shortcut **"Chỉnh sửa Office"** sẽ xuất hiện trên Desktop. Lần sau chỉ cần double-click shortcut này.
-
-<!-- [CHÈN ẢNH: Screenshot shortcut "Chỉnh sửa Office" trên Desktop] -->
-
----
-
-## 💻 HƯỚNG DẪN SỬ DỤNG CHI TIẾT
-
-### Quy trình chỉnh sửa file
+<!-- 
+📸 ẢNH 12: Screenshot hover lên icon, hiện tooltip
+- Hiện rõ tooltip "Trình chỉnh sửa Office - Đang chạy"
+- Khoanh đỏ tooltip
+-->
 
 ```
-Bước 1          Bước 2          Bước 3          Bước 4          Bước 5
-┌─────┐        ┌─────┐        ┌─────┐        ┌─────┐        ┌─────┐
-│ Web │   ──▶  │Click│   ──▶  │File │   ──▶  │Sửa  │   ──▶  │Ctrl │
-│     │        │Edit │        │ mở  │        │file │        │ +S  │
-└─────┘        └─────┘        └─────┘        └─────┘        └─────┘
-Mở website    Click nút     Office mở     Chỉnh sửa      Lưu lên
-              Chỉnh sửa     file lên      nội dung       server
+┌─────────────────────────────────────┐
+│ Trình chỉnh sửa Office - Đang chạy  │
+└─────────────────────────────────────┘
 ```
 
----
-
-### Bước 1: Mở website và tìm file
-
-1. Mở trình duyệt (Chrome, Edge, Firefox...)
-2. Truy cập hệ thống quản lý văn bản của công ty
-3. Đăng nhập tài khoản
-4. Tìm đến file cần chỉnh sửa
-
-<!-- [CHÈN ẢNH: Screenshot trang web hiển thị danh sách file] -->
+✅ **Nếu thấy dòng này = App đang chạy bình thường!**
 
 ---
 
-### Bước 2: Click nút "Chỉnh sửa"
+## 🖱️ BƯỚC 4: MENU CỦA ỨNG DỤNG
 
-1. Tìm nút **"Chỉnh sửa"**, **"Edit"** hoặc icon bút chì ✏️
-2. Click vào nút đó
-3. Trình duyệt sẽ hỏi **"Open with..."** → Chọn **OK** hoặc **Allow**
+### 4.1. Mở menu
 
-<!-- [CHÈN ẢNH: Screenshot nút "Chỉnh sửa" được highlight trên web] -->
+**Click chuột PHẢI** vào icon ứng dụng ở khay hệ thống
 
-<!-- [CHÈN ẢNH: Screenshot popup "Open with..." của trình duyệt] -->
+<!-- 
+📸 ẢNH 13: Screenshot click chuột phải vào icon
+- Hiện icon app
+- Mũi tên + text "Click chuột PHẢI"
+-->
 
----
+### 4.2. Menu hiển thị
 
-### Bước 3: File tự động mở trong Office
+<!-- 
+📸 ẢNH 14: Screenshot menu context hiện ra
+- Hiện đầy đủ menu với 2 mục: "✅ Đang chạy" và "❌ Thoát"
+- Có thể thêm chú thích bên cạnh giải thích từng mục
+-->
 
-Sau khi click, Office tương ứng sẽ tự động mở:
+```
+┌─────────────────────┐
+│ ✅ Đang chạy        │  ← Trạng thái (không click được)
+├─────────────────────┤
+│ ❌ Thoát            │  ← Click để tắt app
+└─────────────────────┘
+```
 
-| Loại file | Ứng dụng mở |
-|-----------|-------------|
-| .doc, .docx | Microsoft Word |
-| .xls, .xlsx | Microsoft Excel |
-| .ppt, .pptx | Microsoft PowerPoint |
-| .vsd, .vsdx | Microsoft Visio |
-
-**Thời gian chờ:** 3-10 giây (tùy tốc độ mạng và kích thước file)
-
-<!-- [CHÈN ẢNH: Screenshot file Word đang mở với nội dung từ server] -->
-
----
-
-### Bước 4: Chỉnh sửa nội dung
-
-1. File đã mở → Chỉnh sửa như bình thường
-2. Thêm, xóa, sửa nội dung tùy ý
-3. Định dạng văn bản, thêm bảng, hình ảnh...
-
-> 💡 **Mẹo:** Làm việc như với file bình thường trên máy tính!
+| Mục | Ý nghĩa | Click được không? |
+|-----|---------|-------------------|
+| **✅ Đang chạy** | Hiển thị trạng thái app | ❌ Không (chỉ để xem) |
+| **❌ Thoát** | Tắt ứng dụng hoàn toàn | ✅ Có |
 
 ---
 
-### Bước 5: Lưu file lên server
+## ❌ BƯỚC 5: THOÁT ỨNG DỤNG
 
-**Cách 1: Phím tắt (Khuyến nghị)**
-- Nhấn **Ctrl + S**
+### 5.1. Cách thoát
 
-**Cách 2: Menu**
-- File → Save
+1. **Click chuột phải** vào icon app ở khay hệ thống
+2. Click **"❌ Thoát"**
 
-**Sau khi lưu:**
-- Thanh tiêu đề không còn dấu `*` (dấu sao biểu thị chưa lưu)
-- File đã được cập nhật lên server
+<!-- 
+📸 ẢNH 15: Screenshot menu với mũi tên chỉ vào "Thoát"
+- Khoanh đỏ hoặc highlight mục "❌ Thoát"
+- Mũi tên chỉ vào
+-->
 
-<!-- [CHÈN ẢNH: Screenshot nhấn Ctrl+S, thanh tiêu đề không còn dấu *] -->
+### 5.2. Sau khi thoát
+
+- Icon app sẽ **biến mất** khỏi khay hệ thống
+- App đã **tắt hoàn toàn**
+- Muốn dùng lại → Chạy lại file `ChinhSuaOffice.exe`
+
+### 5.3. Khi nào nên thoát?
+
+| ✅ Thoát khi | ❌ Không thoát khi |
+|--------------|-------------------|
+| Hết ngày làm việc | Đang cần chỉnh sửa file |
+| Tắt máy tính | Đang làm việc với web |
+| Không cần dùng nữa | Muốn mở file từ web |
+
+### 5.4. Tắt máy tính
+
+Khi bạn **tắt máy tính** hoặc **restart**, ứng dụng sẽ **tự động tắt** theo. Không cần thoát thủ công.
 
 ---
 
-### Bước 6: Đóng file
+## 💻 CÁCH SỬ DỤNG HÀNG NGÀY
 
-1. Sau khi lưu xong, đóng file: **File → Close** hoặc click **X**
-2. Nếu Office hỏi **"Save changes?"** → Click **Save** để chắc chắn
-3. Quay lại web để kiểm tra file đã cập nhật
+### Quy trình đơn giản:
+
+<!-- 
+📸 ẢNH 16: Sơ đồ quy trình 4 bước (có thể dùng tool vẽ sơ đồ)
+- Bước 1: Bật máy tính
+- Bước 2: Chạy app (double-click exe)
+- Bước 3: Vào web làm việc
+- Bước 4: Chỉnh sửa file Office
+-->
+
+```
+Bước 1              Bước 2              Bước 3              Bước 4
+┌──────────┐       ┌──────────┐       ┌──────────┐       ┌──────────┐
+│ Bật máy  │  ──▶  │ Chạy app │  ──▶  │ Vào web  │  ──▶  │ Chỉnh    │
+│ tính     │       │ (1 lần)  │       │ làm việc │       │ sửa file │
+└──────────┘       └──────────┘       └──────────┘       └──────────┘
+```
+
+### Mỗi ngày chỉ cần:
+
+1. **Bật máy tính**
+2. **Double-click `ChinhSuaOffice.exe`** (chỉ 1 lần đầu ngày)
+3. **Làm việc bình thường** - App chạy ngầm, không cần quan tâm
+4. **Tắt máy khi xong** - App tự tắt theo
 
 ---
 
-## ⚠️ CÁC LƯU Ý QUAN TRỌNG
+## 🌐 SỬ DỤNG VỚI WEBSITE
+
+### Khi muốn chỉnh sửa file từ web:
+
+1. Đảm bảo **app đang chạy** (xem icon ở khay hệ thống)
+2. Vào **website** công ty
+3. Tìm file cần chỉnh sửa
+4. Click nút **"Chỉnh sửa"** hoặc **"Edit"**
+
+<!-- 
+📸 ẢNH 17: Screenshot website với nút "Chỉnh sửa" được highlight
+- Hiện giao diện web
+- Khoanh đỏ nút "Chỉnh sửa" / "Edit"
+-->
+
+5. **Office tự động mở** file (Word/Excel/PowerPoint...)
+
+<!-- 
+📸 ẢNH 18: Screenshot Microsoft Word đang mở file từ server
+- Hiện giao diện Word với file đang mở
+- Có thể highlight thanh tiêu đề hiện URL
+-->
+
+6. Chỉnh sửa nội dung
+7. Nhấn **Ctrl + S** để lưu lên server
+
+<!-- 
+📸 ẢNH 19: Screenshot nhấn Ctrl+S trong Word
+- Có thể hiện bàn phím với Ctrl và S được highlight
+- Hoặc hiện menu File > Save
+-->
+
+---
+
+## ⚠️ LƯU Ý QUAN TRỌNG
 
 ### ✅ NÊN làm:
 
-| Nên | Lý do |
-|-----|-------|
-| Giữ app chạy suốt ngày | Để mở file bất cứ lúc nào |
-| Lưu thường xuyên (Ctrl+S) | Tránh mất dữ liệu |
-| Đóng file khi xong | Giải phóng tài nguyên |
-| Kiểm tra mạng trước khi lưu | Đảm bảo lưu thành công |
+- Chạy app **MỖI LẦN bật máy**
+- Để app **chạy ngầm** suốt ngày làm việc
+- **Lưu file (Ctrl+S)** thường xuyên khi chỉnh sửa
 
-### ❌ KHÔNG NÊN làm:
+### ❌ KHÔNG NÊN:
 
-| Không nên | Hậu quả |
-|-----------|---------|
-| Tắt app khi đang sửa file | Mất kết nối, không lưu được |
-| Đổi tên file khi đang mở | Lỗi khi lưu |
-| Mở cùng 1 file trên 2 máy | Xung đột dữ liệu |
-| Chỉnh sửa offline | Không lưu được lên server |
+- **Xóa** file `config.json`
+- **Chỉnh sửa** file `config.json` khi không được hướng dẫn
+- **Di chuyển** riêng file exe ra khỏi folder (phải giữ cùng folder với config.json)
 
 ---
 
-## 🔧 XỬ LÝ SỰ CỐ CHI TIẾT
+## ❓ CÂU HỎI THƯỜNG GẶP
 
-### Sự cố 1: File mở ở chế độ Protected View
+### Q: App có hiện cửa sổ không?
+**A:** Không. App chạy ngầm, chỉ có icon ở khay hệ thống.
 
-**Triệu chứng:**
-- Thanh vàng hiện ở trên cùng: **"PROTECTED VIEW - Be careful..."**
-- Không thể chỉnh sửa file
+### Q: Làm sao biết app đang chạy?
+**A:** Xem icon ở khay hệ thống (góc phải taskbar). Di chuột lên sẽ thấy "Đang chạy".
 
-<!-- [CHÈN ẢNH: Screenshot thanh vàng Protected View trong Excel] -->
+### Q: App tự chạy khi bật máy không?
+**A:** Có, app sẽ tự đăng ký khởi động cùng Windows sau lần chạy đầu tiên.
 
-**Nguyên nhân:** 
-- Chạy app lần đầu nhưng Office đã mở sẵn
-- Registry chưa được cấu hình
+### Q: Quên chạy app thì sao?
+**A:** Khi click chỉnh sửa file trên web sẽ không hoạt động. Hãy chạy app rồi thử lại.
 
-**Cách xử lý:**
-
-**Cách 1: Khởi động lại (Đơn giản)**
-1. Đóng TẤT CẢ file Word/Excel/PowerPoint
-2. Tắt app ChinhSuaWord
-3. Mở lại app ChinhSuaWord
-4. Mở lại file từ web
-
-**Cách 2: Cấu hình thủ công (Nếu cách 1 không được)**
-
-Làm theo các bước sau trong Word/Excel/PowerPoint:
-
-```
-1. Mở Word (hoặc Excel/PowerPoint)
-2. File → Options (Tùy chọn)
-3. Trust Center (Trung tâm Tin cậy) → Trust Center Settings
-4. Trusted Locations (Vị trí Tin cậy)
-5. Click "Add new location..." (Thêm vị trí mới)
-6. Nhập: https://administrator.lifetex.vn:316
-7. ✅ Tick "Subfolders of this location are also trusted"
-8. Click OK → OK
-```
-
-<!-- [CHÈN ẢNH: Screenshot Trust Center với Trusted Locations] -->
-
-<!-- [CHÈN ẢNH: Screenshot dialog "Add new location" với URL đã nhập] -->
+### Q: Có cần quyền Admin không?
+**A:** Không cần.
 
 ---
 
-### Sự cố 2: Không mở được file từ web
+## 📞 HỖ TRỢ
 
-**Triệu chứng:**
-- Click "Chỉnh sửa" nhưng không có gì xảy ra
-- Hoặc báo lỗi "Cannot open file"
-
-**Kiểm tra:**
-
-| Kiểm tra | Cách kiểm tra |
-|----------|---------------|
-| App đang chạy? | Xem taskbar có icon app không |
-| Status = RUNNING? | Mở app, xem status màu xanh chưa |
-| Có mạng? | Thử mở website khác |
-| URL đúng? | Kiểm tra config.json |
-
-**Cách xử lý:**
-1. Mở app ChinhSuaWord (nếu chưa mở)
-2. Chờ status = RUNNING
-3. Thử lại click "Chỉnh sửa" trên web
-
----
-
-### Sự cố 3: Lưu file bị lỗi
-
-**Triệu chứng:**
-- Nhấn Ctrl+S nhưng báo lỗi
-- Hoặc hiện thông báo "Upload failed"
-
-**Nguyên nhân có thể:**
-- Mất kết nối mạng
-- Server đang bảo trì
-- Phiên đăng nhập hết hạn
-
-**Cách xử lý:**
-
-1. **Lưu tạm ra máy:**
-   - File → Save As → Chọn Desktop
-   - Đặt tên khác để không nhầm
-
-2. **Kiểm tra mạng:**
-   - Thử mở website công ty
-   - Nếu không mở được → Đợi mạng ổn định
-
-3. **Đăng nhập lại:**
-   - Mở web, đăng xuất rồi đăng nhập lại
-   - Thử mở và lưu file lại
-
-4. **Upload thủ công:**
-   - Nếu vẫn lỗi, upload file đã lưu ở bước 1 lên web
-
----
-
-### Sự cố 4: Port 1901 đã được sử dụng
-
-**Triệu chứng:**
-- App báo lỗi: "Port 1901 is already in use"
-- Status hiện màu đỏ
-
-**Cách xử lý:**
-
-1. Mở file `config.json` bằng Notepad
-2. Đổi `"port": 1901` thành `"port": 1902`
-3. Lưu file (Ctrl+S)
-4. Khởi động lại app
-
-```json
-{
-  "port": 1902,  ← Đổi số này
-  "companyApiUrl": "https://administrator.lifetex.vn:316",
-  "apiEndpoint": "/api/files/download"
-}
-```
-
----
-
-## ❓ CÂU HỎI THƯỜNG GẶP (FAQ)
-
-### Q1: App có cần chạy liên tục không?
-**A:** Có, app phải chạy khi bạn muốn mở/lưu file từ web. Có thể thu nhỏ xuống taskbar.
-
-### Q2: Có thể cài trên nhiều máy không?
-**A:** Có, mỗi máy cần cài riêng.
-
-### Q3: Mất mạng giữa chừng thì sao?
-**A:** File vẫn mở được, nhưng không lưu lên server được. Hãy lưu tạm ra máy (Save As).
-
-### Q4: Có cần quyền Admin không?
-**A:** Không, app chỉ ghi vào Registry của user hiện tại (HKCU).
-
-### Q5: Có thể sử dụng khi ở nhà không?
-**A:** Có, nếu server công ty cho phép truy cập từ internet. Liên hệ IT để biết thêm.
-
-### Q6: App có tự động cập nhật không?
-**A:** Không, khi có phiên bản mới sẽ được thông báo và gửi file cài đặt mới.
-
----
-
-## 📞 HỖ TRỢ KỸ THUẬT
-
-Nếu gặp vấn đề không thể tự xử lý, vui lòng liên hệ:
-
-| Kênh | Thông tin |
-|------|-----------|
-| **Email** | support@lifetex.vn |
-| **Hotline** | 1900-xxxx |
-| **Website** | https://lifetex.vn |
-
-**Khi liên hệ, vui lòng cung cấp:**
-- Screenshot lỗi (nếu có)
-- Nội dung log trong app
-- Phiên bản Windows và Office đang dùng
-
----
-
-## 📝 LỊCH SỬ PHIÊN BẢN
-
-| Phiên bản | Ngày | Thay đổi |
-|-----------|------|----------|
-| 1.0.0 | 02/12/2024 | Phát hành đầu tiên |
-
----
-
-**© 2024 LifeTex Company. All rights reserved.**
+Nếu gặp vấn đề, liên hệ:
+- **Email:** support@lifetex.vn
+- **Website:** https://lifetex.vn

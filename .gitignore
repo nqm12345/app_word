@@ -13,3 +13,7 @@ node_modules/
 # Temp
 *.log
 *.tmp
+
+# Release files
+*.rar
+ChinhSuaOffice/
