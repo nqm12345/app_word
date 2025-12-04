@@ -80,20 +80,25 @@ namespace WordWebDAV
             try
             {
                 string[] officeApps = { "Word", "Excel", "PowerPoint", "Visio" };
+                // Hỗ trợ Office 2010 (14.0), 2013 (15.0), 2016/2019/2021/365 (16.0)
+                string[] officeVersions = { "16.0", "15.0", "14.0" };
+                
                 foreach (var app in officeApps)
                 {
-                    ConfigureProtectedView($@"Software\Microsoft\Office\16.0\{app}\Security\ProtectedView");
-                    ConfigureProtectedView($@"Software\Microsoft\Office\15.0\{app}\Security\ProtectedView");
-                    
-                    AddTrustedLocation($@"Software\Microsoft\Office\16.0\{app}\Security\Trusted Locations\Location99", "https://administrator.lifetex.vn:316");
-                    AddTrustedLocation($@"Software\Microsoft\Office\16.0\{app}\Security\Trusted Locations\Location98", "https://vps-tcsg.lifetex.vn");
-                    
-                    if (!string.IsNullOrEmpty(_config.CompanyApiUrl) && 
-                        !_config.CompanyApiUrl.Contains("localhost") &&
-                        !_config.CompanyApiUrl.Contains("administrator.lifetex") &&
-                        !_config.CompanyApiUrl.Contains("vps-tcsg.lifetex"))
+                    foreach (var version in officeVersions)
                     {
-                        AddTrustedLocation($@"Software\Microsoft\Office\16.0\{app}\Security\Trusted Locations\Location97", _config.CompanyApiUrl);
+                        ConfigureProtectedView($@"Software\Microsoft\Office\{version}\{app}\Security\ProtectedView");
+                        
+                        AddTrustedLocation($@"Software\Microsoft\Office\{version}\{app}\Security\Trusted Locations\Location99", "https://administrator.lifetex.vn:316");
+                        AddTrustedLocation($@"Software\Microsoft\Office\{version}\{app}\Security\Trusted Locations\Location98", "https://vps-tcsg.lifetex.vn");
+                        
+                        if (!string.IsNullOrEmpty(_config.CompanyApiUrl) && 
+                            !_config.CompanyApiUrl.Contains("localhost") &&
+                            !_config.CompanyApiUrl.Contains("administrator.lifetex") &&
+                            !_config.CompanyApiUrl.Contains("vps-tcsg.lifetex"))
+                        {
+                            AddTrustedLocation($@"Software\Microsoft\Office\{version}\{app}\Security\Trusted Locations\Location97", _config.CompanyApiUrl);
+                        }
                     }
                 }
             }
