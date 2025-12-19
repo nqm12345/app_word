@@ -1,5 +1,7 @@
 {
   "port": 1901,
-  "companyApiUrl": "https://administrator.lifetex.vn:316",
+  "companyApiUrls": [
+    "https://administrator.lifetex.vn:316"
+  ],
   "apiEndpoint": "/api/files/download"
 }

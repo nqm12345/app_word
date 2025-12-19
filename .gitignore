@@ -17,3 +17,8 @@ node_modules/
 # Release files
 *.rar
 ChinhSuaOffice/
+Installer/*.exe
+
+# .NET Framework installers (large files)
+*.exe
+!app.ico
